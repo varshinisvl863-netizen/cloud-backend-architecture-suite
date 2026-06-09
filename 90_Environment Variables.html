@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Environment Variables Demo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h2{
+    color:#333;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#007bff;
+    color:white;
+    margin-top:10px;
+}
+
+#output{
+    margin-top:20px;
+    padding:10px;
+    background:#f8f9fa;
+    border:1px solid #ddd;
+    min-height:50px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Environment Variables Demo</h2>
+
+    <button onclick="loadConfig()">Load Config</button>
+
+    <div id="output">Click button to load environment variables</div>
+</div>
+
+<script>
+// Simulated environment variables (like .env file)
+const ENV = {
+    APP_NAME: "My Fullstack App",
+    API_URL: "https://api.example.com",
+    MODE: "development",
+    VERSION: "1.0.0"
+};
+
+function loadConfig() {
+    document.getElementById("output").innerHTML = `
+        <b>App Name:</b> ${ENV.APP_NAME}<br>
+        <b>API URL:</b> ${ENV.API_URL}<br>
+        <b>Mode:</b> ${ENV.MODE}<br>
+        <b>Version:</b> ${ENV.VERSION}
+    `;
+}
+</script>
+
+</body>
+</html>

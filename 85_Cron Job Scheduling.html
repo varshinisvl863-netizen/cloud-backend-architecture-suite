@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cron Job Scheduling</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#ff9800;
+}
+
+.section{
+    margin:15px 0;
+    padding:15px;
+    background:#f8f9fa;
+    border-left:5px solid #ff9800;
+}
+
+pre{
+    background:#272822;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    overflow-x:auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Cron Job Scheduling Demo</h1>
+
+<div class="section">
+<h3>Daily Backup Job</h3>
+<pre>
+0 0 * * * /backup/database.sh
+</pre>
+</div>
+
+<div class="section">
+<h3>Send Daily Reports</h3>
+<pre>
+0 9 * * * /reports/send-report.sh
+</pre>
+</div>
+
+<div class="section">
+<h3>Clean Temporary Files</h3>
+<pre>
+0 1 * * 0 /cleanup/temp-files.sh
+</pre>
+</div>
+
+<div class="section">
+<h3>Status</h3>
+<p>✓ Cron Jobs Scheduled Successfully</p>
+</div>
+
+</div>
+
+</body>
+</html>

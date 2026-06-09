@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logging System</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+    color:#333;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.info{ background:#007bff; color:white; }
+.warn{ background:#ffc107; }
+.error{ background:#dc3545; color:white; }
+
+#logBox{
+    margin-top:15px;
+    padding:10px;
+    background:#f8f9fa;
+    border:1px solid #ddd;
+    height:200px;
+    overflow-y:auto;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Logging System Demo</h2>
+
+    <button class="info" onclick="addLog('INFO', 'Application started')">INFO</button>
+    <button class="warn" onclick="addLog('WARN', 'Low disk space')">WARN</button>
+    <button class="error" onclick="addLog('ERROR', 'System failure')">ERROR</button>
+
+    <div id="logBox"></div>
+</div>
+
+<script>
+function addLog(level, message) {
+    const logBox = document.getElementById("logBox");
+
+    const time = new Date().toLocaleTimeString();
+
+    const logEntry = document.createElement("div");
+    logEntry.innerHTML = `[${time}] ${level}: ${message}`;
+
+    if(level === "ERROR"){
+        logEntry.style.color = "red";
+    } else if(level === "WARN"){
+        logEntry.style.color = "orange";
+    } else {
+        logEntry.style.color = "green";
+    }
+
+    logBox.appendChild(logEntry);
+    logBox.scrollTop = logBox.scrollHeight;
+}
+</script>
+
+</body>
+</html>

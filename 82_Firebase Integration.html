@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firebase Integration</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    width:450px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+input{
+    width:95%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    padding:10px 20px;
+    background:#FFCA28;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+#result{
+    margin-top:20px;
+    padding:10px;
+    background:#f8f9fa;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Firebase Integration Demo</h2>
+
+    <input type="text" id="username" placeholder="Enter Username">
+
+    <button onclick="saveData()">Save Data</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function saveData() {
+    const username =
+        document.getElementById("username").value;
+
+    document.getElementById("result").innerHTML =
+        "Data Saved Successfully: " + username;
+}
+</script>
+
+</body>
+</html>
